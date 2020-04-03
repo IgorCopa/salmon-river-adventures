@@ -10,7 +10,7 @@ function preLoadImages(){
     let imageNumber = 1;
     for(let i=0; i<images.length; i++){
         images[i] = new Image();
-        images[i].src = `../images/slider/slide${imageNumber}.jpg`;
+        images[i].src = `https://raw.githubusercontent.com/IgorCopa/salmon-river-adventures/master/images/slider/slide${imageNumber}.jpg`;
         imageNumber++;
     }
 }
