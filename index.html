@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Salmon River Adventures is a company that provides outdoor activities such as rafting, kayaking, wake boarding and tubing. It is in Riggins, Idaho state - USA.">
+    <meta name="robots" content="index,follow">
+    <title>Salmon River Adventures - Home</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/small.css">
+    <link rel="stylesheet" href="./css/medium.css">
+    <link rel="stylesheet" href="./css/large.css">
+    <link rel="icon" href="./images/icons/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,500,600,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header> <!-- HEADER -->
+            <div class="header-top" id="home">
+                <figure class="logo"> <!-- LOGO  -->
+                    <picture>
+                        <source media = "(max-width: 500px)" srcset="./images/logo-500.png">
+                        <img src="./images/logo.png" alt="Logo">
+                    </picture>
+                </figure>
+                <div class="menu"> <!-- HAMBURGER MENU -->
+                    <div class="hamburger">
+                        <div class="lines up"></div>
+                        <div class="lines mid"></div>
+                        <div class="lines down"></div>
+                    </div>
+                    <div class="overLay"></div>
+                    <nav id="navBar" class="large-screen">
+                        <ul>
+                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li><a href="./activities.html">Activities</a></li>
+                            <li><a href="./river-guide.html">River Guide</a></li>
+                            <li><a href="./reservation.html">Reservation</a></li>
+                            <li><a href="./contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <h1>Salmon River Adventures</h1>
+            </div>
+            <div class="header-bottom">
+                <div class="weather-summary"> <!-- WEATHER SUMMARY -->
+                    <h3>Current Weather</h3>
+                    <div class="weather-summary-info">
+                        <p>Current: <span id="current-weather"></span></p>
+                        <p>Temperature: <span id="temperature"></span>°F</p>
+                        <p>Wind Chill: <span id="wind-chill"></span>°F</p>
+                        <p>Humidity: <span id="humidity"></span>%</p>
+                        <p>Wind Speed: <span id="wind-speed"></span>mph</p>
+                    </div>
+                </div>
+                <div class="click"> <!-- TOGGLE BUTTON -->
+                    <p>Click to go!</p>
+                    <a href="#about" id="toggle">
+                        <div id="lid">
+                            <div id="pin"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="slider"></div>
+        </header>
+
+        <main> <!-- MAIN CONTENT -->
+            <div class="title" id="about"><h2>About Us</h2></div>
+            <div class="content">
+                <div class="about-us-image">
+                    <figure>
+                        <picture>
+                            <source media = "(max-width: 500px)" srcset="./images/about-us-500.jpg">
+                            <source media = "(max-width: 800px)" srcset="./images/about-us-800.jpg">
+                            <img src="./images/about-us-1100.jpg" alt="People kayaking on the river">
+                        </picture>
+                        <figcaption>People Kayaking on the River</figcaption>
+                    </figure>
+                </div>
+                <div class="about-us-text">
+                    <p>
+                        The Salmon River Adventures river rafting tour company is located in
+                        Riggins, Idaho and offers world-class, whitewater rafting experiences
+                        on the Salmon River in the middle of an Idaho wilderness. The
+                        owner-operated company offers day and overnight trips for groups and
+                        individuals using state-of-the-art equipment and complies with all
+                        U.S. Forest Service regulations. We count on 4 experienced and well
+                        trainer instructor on our team, it is all part of the principles that
+                        reflect our core business values of high-end adventures, professional
+                        and experienced service, safety, and fun.
+                    </p>
+                </div>
+            </div>
+        </main>
+        <section class="forecast"> <!-- FOLLOWING DAYS WEATHER -->
+            <div class="title"><h2>Following Days Weather</h2></div>
+            <div class="days">
+                <div class="sqr"></div>
+                <div class="sqr"></div>
+                <div class="sqr"></div>
+                <div class="sqr"></div>
+                <div class="sqr"></div>
+            </div>
+        </section>
+        <section class="testimonials">
+            <h2>
+                Testimonials
+            </h2>
+            <div class="quotes">
+                <div class="quote quote1">
+                    <figure>
+                        <picture>
+                            <source media = "(max-width: 500px)" srcset="./images/testimonials/testimonial1-500.jpg">
+                            <img src="./images/testimonials/testimonial1-800.jpg" alt="Testimonial">
+                        </picture>
+                    </figure>
+                    <p>"I didn't know I was able to take my kids with me, and in this time, we wanted to do something different for our little Emma, it was her birthday. It wasa  really good experience. Our daughter now is asking us to do it again."</p>
+                    <p>-Mark C.</p>
+                </div>
+                <div class="quote quote2">
+                    <figure>
+                        <picture>
+                            <source media = "(max-width: 500px)" srcset="./images/testimonials/testimonial2-500.jpg">
+                            <img src="./images/testimonials/testimonial2-800.jpg" alt="Testimonial">
+                        </picture>
+                    </figure>
+                    <p>"I love this river, I used to go, when I was a kid, with my family during summer to watch people kayaking, and now I was able to actually experience such a good thing. Julie (the guide), taught me really well. I already plan on going back."</p>
+                    <p>-Lorena H.</p>
+                </div>
+                <div class="quote quote3">
+                    <figure>
+                        <picture>
+                            <source media = "(max-width: 500px)" srcset="./images/testimonials/testimonial3-500.jpg">
+                            <img src="./images/testimonials/testimonial3-800.jpg" alt="Testimonial">
+                        </picture>
+                    </figure>
+                    <p>"I was able to do something I have never done, I feel like a boy now for being able to practice wakeboarding, such a unique experience that only Salmon River Adventures could provide for me. Thank you!"</p>
+                    <p>-Luke X.</p>
+                </div>
+            </div>
+        </section>
+        <section class="reservation">
+            <h2>
+                Book a Trip
+            </h2>
+            <div class="bookings">
+                <div class="to-book">
+                    <figure>
+                        <picture>
+                            <source media = "(max-width: 500px)" srcset="./images/trips/trip-img-500.jpg">
+                            <img src="./images/trips/trip-img-800.jpg" alt="People on a trip">
+                        </picture>
+                    </figure>
+                    <div class="booking-invitation">
+                        <p>Really?! Are you going to stand there and do nothing while people are having fun here with us.</p>
+                        <a href="./reservation.html">BOOK HERE</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer> <!-- FOOTER -->
+            <div class="title">
+                <a href="./gallery.html">Gallery</a>
+                <a href="./contact.html">Contact</a>
+                <a href="./reservation.html">Reservation</a>
+            </div>
+            <div class="content-footer">
+                <div class="info">
+                    <div class="images"><a href="#"><img src="./images/icons/facebook.png" class="info-images" alt="Facebook"></a></div>
+                    <div class="images"><a href="#"><img src="./images/icons/instagram.png" class="info-images" alt="Instagram"></a></div>
+                    <div class="images"><a href="#"><img src="./images/icons/mail.png" class="info-images" alt="email"></a></div>
+                </div>
+                <p>Salmon River Adventures</p>
+                <p>1000 S. Main Street, Riggins,</p>
+                <p>ID, 83549, United States</p>
+                <span>For Reservation, call (208)555-1234</span>
+            </div>
+            <div class="copy"><p>&copy; Copyright Salmon River Adventures 2020</p></div>
+        </footer>
+    </div>
+    <script src="./js/index.js"></script> <!-- JAVASCRIPT -->
+    <script src="./js/slider.js"></script>
+    <script src="./js/current-weather.js"></script>
+    <script src="./js/forecast.js"></script>
+</body>
+</html>

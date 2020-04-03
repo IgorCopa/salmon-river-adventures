@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Salmon River Adventures is a company that provides outdoor activities such as rafting, kayaking, wake boarding and tubing. It is in Riggins, Idaho state - USA.">
+    <meta name="robots" content="index,follow">
+    <title>Salmon River Adventures - Reservation</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/small.css">
+    <link rel="stylesheet" href="./css/medium.css">
+    <link rel="stylesheet" href="./css/large.css">
+    <link rel="icon" href="./images/icons/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,500,600,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header-activities"> <!-- HEADER -->
+            <div class="header-top header-top-activities" id="home">
+                <figure class="logo"> <!-- LOGO  -->
+                    <picture>
+                        <source media = "(max-width: 500px)" srcset="./images/logo-500.png">
+                        <img src="./images/logo.png" alt="Logo">
+                    </picture>
+                </figure>
+                <div class="menu"> <!-- HAMBURGER MENU -->
+                    <div class="hamburger">
+                        <div class="lines up"></div>
+                        <div class="lines mid"></div>
+                        <div class="lines down"></div>
+                    </div>
+                    <div class="overLay"></div>
+                    <nav id="navBar" class="">
+                        <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="./activities.html">Activities</a></li>
+                            <li><a href="./river-guide.html">River Guide</a></li>
+                            <li class="active"><a href="./reservation.html">Reservation</a></li>
+                            <li><a href="./contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main> <!-- MAIN CONTENT -->
+            <div class="title title-activity"><h2>Reservation & Pricing</h2></div>
+            <div class="content reserve">
+                <div class="about-us-image reservation">
+                        <picture>
+                            <source media = "(max-width: 500px)" srcset="./images/trips/trip-img-500.jpg">
+                            <img src="./images/trips/trip-img-1100.jpg" alt="People rafting on the river">
+                        </picture>
+                </div>
+            </div>
+        </main>
+        <section class="reservation trips">
+            <div class="trip-bookings">
+                <div class="book-now">
+                    <div class="each-trip">
+                        <h3>4-6 Day Main Salmon River Rafting Trip</h3>
+                        <p>Trip Length: 82 miles</p>
+                        <p>Difficulty: Class III</p>
+                        <p>$1,229.00</p>
+                    </div>
+                    <div class="each-trip">
+                        <h3>2-3 Day Lower Salmon River Canyon Trip</h3>
+                        <p>Trip Length: 50 miles</p>
+                        <p>Difficulty: Class II to IV</p>
+                        <p>$549.00</p>
+                    </div>
+                    <div class="each-trip">
+                        <h3>3-5 Day Middle Fork of Salmon River Trip</h3>
+                        <p>Trip Length: 75 or 100 miles</p>
+                        <p>Difficulty: Class III to IV</p>
+                        <p>$889.00</p>
+                    </div>
+                    <div class="each-trip">
+                        <h3>2-4 Day Snake River (Hells Canyon) Trip</h3>
+                        <p>Trip Length: 32 miles</p>
+                        <p>Difficulty: Class III to IV</p>
+                        <p>$589.00</p>
+                    </div>
+                    <div class="each-trip">
+                        <h3>1/2 Day Trip</h3>
+                        <p>$65.00</p>
+                        <p>Call us for more information</p>
+                        <p>Phone: (208)555-1234</p>
+                    </div>
+                    <div class="each-trip">
+                        <h3>1 Day Trip</h3>
+                        <p>$89.00</p>
+                        <p>Call us for more information</p>
+                        <p>Phone: (208)555-1234</p>
+                    </div>
+                </div>
+            </div>
+            <form id="form">
+                <input type="text" class="formElements" placeholder="Your full name">
+                <input type="email" class="formElements" placeholder="Your email">
+                <input type="tel" class="formElements" placeholder="Your phone number">
+                <select class="formElements" id="userAdventures" name="userAdventures">
+                    <option selected="true" disabled>Select Trip...</option>
+                    <option value="main">Main Salmon River</option>
+                    <option value="lower">Lower Salmon River (Canyon)</option>
+                    <option value="middle">Middle Fork</option>
+                    <option value="hells">Snake River (Hells Canyon)</option>
+                    <option value="half-day">1/2 Day Trip</option>
+                    <option value="one-day">1 Day Trip</option>
+                </select>
+                <input class="formElements" id="userDate" name="userDate" type="date">
+                <textarea name="text" id="textarea" class="formElements" cols="30" rows="10" placeholder="Leave a message here..."></textarea>
+                <button>Send me</button>
+            </form>
+        </section>
+        <footer> <!-- FOOTER -->
+            <div class="title">
+                <a href="./gallery.html">Gallery</a>
+                <a href="./contact.html">Contact</a>
+                <a href="./reservation.html">Reservation</a>
+            </div>
+            <div class="content-footer">
+                <div class="info">
+                    <div class="images"><a href="#"><img src="./images/icons/facebook.png" class="info-images" alt="Facebook"></a></div>
+                    <div class="images"><a href="#"><img src="./images/icons/instagram.png" class="info-images" alt="Instagram"></a></div>
+                    <div class="images"><a href="#"><img src="./images/icons/mail.png" class="info-images" alt="email"></a></div>
+                </div>
+                <p>Salmon River Adventures</p>
+                <p>1000 S. Main Street, Riggins,</p>
+                <p>ID, 83549, United States</p>
+                <span>For Reservation, call (208)555-1234</span>
+            </div>
+            <div class="copy"><p>&copy; Copyright Salmon River Adventures 2020</p></div>
+        </footer>
+    </div>
+    <script src="./js/index.js"></script> <!-- JAVASCRIPT -->
+</body>
+</html>

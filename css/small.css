@@ -1,0 +1,728 @@
+@charset "UTF-8";
+/* SETUP */
+html{
+    scroll-behavior: smooth;
+    -webkit-scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+body, *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: rgb(49, 49, 57);
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.container{
+    background-color: rgb(224, 224, 233);
+    width: 100%;
+    max-width: 64em;
+    margin: 0 auto;
+}
+
+h1, h2{
+    font-family: 'Quicksands', sans-serif;
+    color: rgb(18, 18, 18);
+    text-align: center;
+}
+
+p, span, a{
+    font-family: 'Roboto Slab', serif;
+}
+
+figure, slider{
+    overflow-x: hidden;
+}
+
+main .content p,
+main .content figure{
+    color: rgb(18, 18, 18);
+}
+
+
+/* HEADER */
+.container header{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.container .header-activities{
+    height: auto;
+}
+
+header .header-top{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, minmax(60px, 1fr));
+}
+
+.header-top-activities{
+    grid-template-rows: repeat(1, minmax(60px, 1fr)) !important;
+}
+
+header .header-top .logo{
+    position: fixed;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    width: 80px;
+    height: 80px;
+    z-index: 75;
+}
+
+header .header-top .logo img{
+    width: 50px;
+    height: 50px;
+    margin: 12px 0 0 15px;
+}
+
+header .header-top .menu{
+    position: relative;
+    grid-row: 1/2;
+    grid-column: 2/3;
+    justify-self: end;
+    width: 70px;
+    height: 100%;
+}
+
+header .header-top .menu .hamburger{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(53, 56, 173);
+    margin: 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    z-index: 90;
+}
+
+.header-top .menu .hamburger .lines{
+    width: 75%;
+    height: 3px;
+    background-color: rgb(18, 18, 18);
+    border-radius: 3px;
+    transition: all .2s ease-in-out;
+}
+.disappear{
+    background-color: transparent !important;
+}
+.rotateUp{
+    margin-top: 7px;
+    transform: rotate(-45deg);
+    top: 12px;
+}
+.rotateDown{
+    margin-top: 7px;
+    transform: rotate(45deg);
+    bottom: 12px;
+}
+
+.header-top .menu .hamburger .up{
+    position: absolute;
+    width: 75%;
+    height: 3px;
+    background-color: rgb(0, 0, 0);
+    top: 12px;
+    border-radius: 3px;
+    transition: all .24s cubic-bezier(0.07, 0.8, 0.45, 0.7); /* or ease-out */
+}
+
+.header-top .menu .hamburger .down{
+    position: absolute;
+    width: 75%;
+    height: 3px;
+    background-color: rgb(0, 0, 0);
+    bottom: 12px;
+    border-radius: 3px;
+    transition: all .24s cubic-bezier(0.07, 0.8, 0.45, 0.7); /* or ease-out */
+}
+
+.header-top .menu .overLay{
+    position: fixed;
+    background-color: rgba(0, 0, 0, .75);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 79;
+    transform: translate(110%);
+    overflow-x: hidden;
+    transform-origin: right;
+    transition: transform .2s ease-in;
+}
+
+.header-top .menu nav{
+    position: fixed;
+    background-color: rgba(0, 0, 0, .97);
+    top: 0;
+    left: 10vw;
+    height: 100vh;
+    width: 90%;
+    box-shadow: 5px 2px 5px rgba(200, 200, 200, .7),
+                -5px 2px 5px rgba(200, 200, 200, .7);
+    z-index: 80;
+    transform: translate(110%);
+    overflow-x: hidden;
+    transform-origin: right;
+    transition: transform .2s ease-in;
+}
+.toggleNav{
+    transform: translateX(0%) !important;
+}
+
+.menu nav ul{
+    list-style: none;
+    margin: 120px 0;
+}
+
+nav ul li a{
+    display: block;
+    text-decoration: none;
+    color: rgb(53, 56, 173);
+    padding: .5rem;
+    text-align: center;
+}
+
+nav ul li a:hover{
+    background-color: rgb(53, 56, 173);
+    color: rgb(0, 0, 0);
+}
+nav ul li.active a{
+    color: rgb(224, 224, 233);
+}
+
+header .header-top h1{
+    grid-row: 2/3;
+    grid-column: 1/3;
+    font-size: 1.4rem;
+    margin: 10px 0;
+    padding: 20px 0;
+    z-index: 75;
+    color: rgb(18, 18, 18);
+    text-shadow: 3px 0px 8px rgb(230, 230, 230),
+                -3px 1px 8px rgb(230, 230, 230);
+}
+
+header .header-bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+
+header .header-bottom .weather-summary{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, .6);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 15px;
+    width: 200px;
+    z-index: 75;
+}
+
+header .header-bottom .weather-summary h3{
+    color: rgb(224, 224, 233);
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 8px;
+}
+    
+.header-bottom .weather-summary .weather-summary-info p{
+    color: rgb(224, 224, 233);
+}
+.weather-summary-info p span{
+    color: rgb(224, 224, 233);
+}
+
+header .header-bottom .click{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    bottom: 2.5rem;
+    z-index: 75;
+}
+
+header .header-bottom .click p{
+    margin-bottom: 5px;
+    color: rgb(255, 255, 255);
+}
+
+header .header-bottom .click a#toggle{
+    width: 1.2rem;
+    height: 3.5rem;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, .7);
+    border: none;
+    outline: none;
+}
+
+.header-bottom .click a #lid{
+    position: relative;
+    width: inherit;
+    height: 2.2rem;
+    border-radius: inherit;
+    background-color: rgb(53, 56, 173);
+    top: 0%;
+    transition: all .15s ease-in;
+}
+
+.click a #lid #pin{
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: inherit;
+    background-color: rgba(0, 0, 0, .7);
+    bottom: 10px;
+    left: 6.5px;
+}
+
+header .slider{
+    position: absolute;
+    width: 100vw;
+    max-width: 64em;
+    height: 100%;
+    z-index: 60;
+}
+
+.header-activities{
+    height: auto;
+}
+
+
+/* MAIN CONTENT */
+.container main{
+    display: flex;
+    flex-direction: column;
+}
+
+main .title h2{
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+main .content{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.content .about-us-image figure{
+    margin-bottom: 10px;
+    background-color: rgb(210, 210, 210);
+}
+
+.about-us-image figure picture img{
+    width: 100%;
+}
+
+.about-us-image figure figcaption{
+    text-align: center;
+    padding-bottom: 5px;
+    font-size: .9rem;
+}
+
+.content .about-us-text p{
+    text-align: justify;
+}
+
+.container .forecast{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    background-color: rgb(53, 56, 173);
+    padding-bottom: 10px;
+    margin: 0 10px;
+}
+
+.container .forecast .title h2{
+    margin: 10px;
+    font-size: 1.2rem;
+    color: rgb(18, 18, 18);
+}
+
+.container .forecast .days{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.container .forecast .days .sqr{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 220px;
+    background-color: rgba(62, 146, 204, .5);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+.myDays{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .testimonials{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    position: relative;
+}
+
+.testimonials h2{
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.testimonials .quotes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonials .quotes .quote{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.quote figure picture img{
+    width: 40%;
+    height: 40%;
+    margin-left: 50%;
+    margin-bottom: 10px;
+    transform: translateX(-50%);
+}
+
+.quote p{
+    text-align: justify;
+    font-style: italic;
+}
+
+.container .reservation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: rgb(209, 209, 209);
+    padding: 10px;
+}
+
+.reservation h2{
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.reservation .bookings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.reservation .bookings .to-book{
+    display: flex;
+    flex-direction: column;
+}
+
+.to-book figure picture img{
+    width: 60%;
+    height: 60%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.to-book .booking-invitation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 10rem;
+}
+
+.to-book .booking-invitation p{
+    margin: 10px 0;
+    text-align: justify;
+}
+
+.to-book .booking-invitation a{
+    margin: 1rem 2rem;
+    background-color: rgb(255, 115, 0);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #000000;
+    text-decoration: none;
+    width: 8rem;
+    height: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 2rem;
+}
+
+.trips .trip-bookings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.trip-bookings .contact-now p{
+    font-size: 1.2rem !important;
+    color: rgb(80, 80, 80);
+    margin-bottom: 5px;
+}
+
+.trip-bookings .book-now{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+}
+
+.trip-bookings .book-now .each-trip{
+    background-color: rgb(62, 146, 204);
+    border-radius: 10px;
+    padding: 10px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.trip-bookings .book-now .instructor{
+    background-color: rgb(170, 170, 170);
+    border-radius: 5px;
+    padding: 10px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.trip-bookings .book-now .instructor h3,
+.trip-bookings .book-now .instructor h4,
+.trip-bookings .book-now .instructor p{
+    color: rgb(70, 70, 70);
+    font-family: 'Quicksands', sans-serif;
+}
+
+.trip-bookings .book-now .instructor h3{
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.trip-bookings .book-now .instructor h4,
+.trip-bookings .book-now .instructor p{
+    align-self: flex-start;
+    margin-top: 10px;
+    font-family: 'Quicksands', sans-serif;
+}
+
+.book-now .each-trip h3{
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.each-trip figure picture img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.each-trip  a{
+    background-color: rgb(255, 115, 0);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 2rem;
+    padding: 10px 30px;
+}
+
+main.instructors{
+    margin-top: 5px;
+    background-color: rgb(224, 224, 233) !important;
+}
+
+.trip-bookings .instructor div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(190, 190, 190);
+    border-radius: 5px;
+}
+
+.trip-bookings .instructor div h3,
+.trip-bookings .instructor div p{
+    color: rgb(54, 54, 54);
+    font-family: 'Quicksands', sans-serif;
+    margin-bottom: 10px;
+}
+
+.trip-bookings .instructor div img{
+    margin-bottom: 10px;
+    width: 70%;
+}
+
+.trip-bookings .instructor div p{
+    align-self: flex-start;
+    font-size: .9rem;
+}
+
+/* FOOTER */
+.container footer{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(121, 121, 121);
+}
+
+.gallery{
+    margin-top: 10px;
+}
+
+.gallery .gallery-grid{
+    display: grid;
+    grid-auto-rows: minmax(250px, 1fr);
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+}
+
+footer .title{
+    display: flex;
+    justify-content: center;
+}
+        
+footer .title a{
+    color: rgb(0, 0, 0);
+    font-size: 1.1rem;
+    margin: 10px;
+}
+
+footer .title a:hover{
+    text-decoration: none;
+}
+
+footer .content-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .content-footer .info{
+    display: flex;
+    justify-content: center;
+    padding: 10px 15px;
+}
+
+.content-footer .info .images{
+    display: flex;
+}
+
+.info .images img{
+    width: 23px;
+    height: 23px;
+    margin: 0 10px 10px 0;
+}
+
+.info .images a{
+    line-height: 23px;
+    color: rgb(224, 224, 233);
+}
+.info .images a:hover{
+    text-decoration: none;
+}
+
+.content-footer span{
+    line-height: 23px;
+    font-size: 1.2rem;
+    color: rgb(224, 224, 233);
+}
+
+.content-footer p{
+    font-size: 1rem;
+    text-align: center;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    padding: 20px;
+}
+
+#form .formElements{
+    margin-bottom: 15px;
+}
+
+#form input{
+    width: 320px;
+    height: 2.2rem;
+    background-color: transparent;
+    outline: none;
+    border: .6px solid rgb(124, 123, 123);
+}
+
+#form #userAdventures{
+    width: 320px;
+    height: 2.2rem;
+    background-color: transparent;
+    outline: none;
+    border: .6px solid rgb(124, 123, 123);
+}
+
+#form #textarea{
+    height: 400px;
+    width: 320px;
+    background-color: transparent;
+    outline: none;
+    border: .6px solid rgb(124, 123, 123);
+}
+
+#form button{
+    padding: 5px 1rem;
+    outline: none;
+    border: none;
+    background-color: rgba(53, 56, 173);
+    color: rgb(200, 200, 200);
+    cursor: pointer;
+}
+
+#form button:hover{
+    color: rgba(255, 255, 255);
+}
+
+iframe{
+    height: 300px;
+    width: 100%;
+}
+
+footer .copy{
+    margin: 2rem 10px;
+}
+
+.copy p{
+    font-size: .9rem;
+    text-align: center;
+}

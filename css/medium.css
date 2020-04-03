@@ -1,0 +1,142 @@
+@media(min-width: 35em){ /* around 560px wide */
+    .header-top h1{
+        font-size: 2rem !important;
+    }
+
+    main .content{
+        flex-direction: row;
+    }
+
+    main .reserve{
+        flex-direction: column;
+    }
+
+    .content .about-us-image{
+        width: 50%;
+    }
+
+    .content .reservation{
+        width: 100%;
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .about-us-image figure figcaption{
+        text-align: center;
+    }
+
+    .about-us-text{
+        width: 50%;
+        padding-left: 10px;
+    }
+
+    .about-us-text p{
+        text-align: justify;
+        margin: 0;
+    }
+
+    .container .forecast .title h2{
+        margin: 5px 0;
+    }
+
+    .forecast .days{
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: center;
+        height: 200px;
+    }
+
+    .forecast .days .sqr{
+        width: 18% !important;
+        height: 120px !important;
+    }
+
+    .testimonials h2{
+        font-size: 1.4rem;
+    }
+
+    .testimonials .quotes{
+        flex-direction: row;
+    }
+
+    .testimonials .quotes .quote{
+        justify-content: space-between;
+        padding: 10px;
+        height: 450px;
+    }
+
+    .quote figure picture img{
+        width: 60% !important;
+        height: auto !important;
+    }
+
+    .quote  p{
+        margin: 10px !important;
+    }
+
+    .title-activity h2, .reservation h2{
+        font-size: 1.4rem !important;
+    }
+
+    .reservation .bookings{
+        flex-direction: row !important;
+    }
+
+    .reservation .bookings .to-book{
+        flex-direction: row-reverse !important;
+        justify-content: space-between;
+    }
+
+    .to-book figure picture img{
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .to-book .booking-invitation{
+        height: 15rem !important;
+    }
+
+    .to-book .booking-invitation p{
+        margin: 10px !important;
+        text-align: justify;
+    }
+
+    .to-book .booking-invitation a{
+        margin-top: 2rem !important;
+    }
+
+
+    .trip-bookings .book-now{
+        grid-template-columns: repeat(2, minmax(200px, 1fr)) !important;
+    }
+
+    .book-now .each-trip figure picture img{
+        margin-left: 50%;
+        transform: translateX(-50%);
+        width: 50% !important;
+    }
+
+    #form input{
+        width: 450px;
+    }
+
+    #form #userAdventures{
+        width: 450px
+    }
+    
+    #form #textarea{
+        width: 450px;
+    }
+    
+    #form button{
+        padding: 8px 1.4rem;
+    }
+
+    .gallery .gallery-grid{
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+    }
+
+    iframe{
+        height: 350px;
+    }
+}
